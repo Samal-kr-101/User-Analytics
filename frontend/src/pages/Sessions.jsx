@@ -7,7 +7,7 @@ function Sessions() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/sessions")
+      .get(`${import.meta.env.VITE_API_URL}/api/sessions`)
       .then((res) => setSessions(res.data))
       .catch((err) => console.error(err));
   }, []);

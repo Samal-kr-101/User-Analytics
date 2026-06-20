@@ -9,8 +9,8 @@ function Heatmap() {
   const fetchHeatmap = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/heatmap?pageUrl=${encodeURIComponent(url)}`
-      );
+  `${import.meta.env.VITE_API_URL}/api/heatmap?pageUrl=${encodeURIComponent(url)}`
+);
 
       setClicks(res.data);
     } catch (error) {
