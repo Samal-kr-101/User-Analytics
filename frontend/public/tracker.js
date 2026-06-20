@@ -7,7 +7,7 @@
   }
 
   function sendEvent(eventData) {
-    fetch("http://localhost:5000/api/events", {
+    fetch("https://user-analytics-da3k.onrender.com/api/events", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
