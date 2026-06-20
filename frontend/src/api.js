@@ -5,7 +5,3 @@ export default axios.create({
 });
 
 
-import api from "./api";
-
-api.get("/api/events")
-  .then((res) => console.log(res.data));

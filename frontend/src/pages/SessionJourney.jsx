@@ -9,20 +9,22 @@ function SessionJourney() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    setLoading(true);
-    setError("");
+useEffect(() => {
+  setLoading(true);
+  setError("");
 
-    axios
-      .get(`http://localhost:5000/api/sessions/${sessionId}`)
-      .then((res) => {
-        setEvents(res.data);
-      })
-      .catch(() => {
-        setError("Failed to load session data");
-      })
-      .finally(() => setLoading(false));
-  }, [sessionId]);
+  axios
+    .get(
+      `${import.meta.env.VITE_API_URL}/api/sessions/${sessionId}`
+    )
+    .then((res) => {
+      setEvents(res.data);
+    })
+    .catch(() => {
+      setError("Failed to load session data");
+    })
+    .finally(() => setLoading(false));
+}, [sessionId]);
 
   const getBadgeClass = (type) => {
     switch (type) {
